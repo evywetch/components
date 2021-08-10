@@ -1,0 +1,41 @@
+Component Nesting:
+=> A component can be shown inside of another
+Component Reusability
+=> We want to make components that can be easily reused through out application.
+Component Configuration
+=> We should be able to configure a component when it is created.
+=> NOTE: React components(file) are usually written in uppercase ex. CommentDetail.js
+
+
+                                        Open Sources
+
+NOTE: We use CSS framwork from semantic-ui.com. to take care the styling in this app
+    => They provide a default styling for varity components.
+    => How to install/link to it -> Google search "semantic ui cdn" -> go to 'cdnjs.com -> copy a link: https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css -> place this link in the <head> of the HTML file  
+NOTE: We use open source Library(Faker) to generate fake image: 
+    => it helps u automatically generate a ton of realistic fake data
+    => Google search for "faker js" 
+    => Choose 1st link(Github project) "https://github.com/marak/Faker.js/"
+    => Scroll down to Documentation section -> API methods, we will see varoius open source API we can use to create a fake data. And also read how to use it.
+    => How to use with our project:
+        => Open terminal (in our project)  
+        => Run 'npm install --save faker' 
+        => --save Means we want to save this API into our local project.
+        => When we save it, it will create a new entry inside of our package.json ""faker": "^5.5.3" 
+        => Import it in our JS file "import faker from 'faker';"   
+        => How to use it in our code Ex.  src={faker.image.avatar()}   (JS file-> line 13)   
+
+
+                                Creating a Reusable, Configurable component  
+1. Identify the JSX that appears to be duplicated.
+2. What is the purpose of that block of JSX? Think of descriptive name for what it does.
+3. Create a new file to house this new component - it should have the same name as the component.
+4. Create a new component in a new file, paste a JSX into it.
+5. Make the new component configurable by using React's 'props' system. 
+    NOTE: Props(properties, attributes)
+    => System for passing data from a Parent component to a Child component
+    => Goal is to customize or configure a child component
+    => "props" is an object contains all attributes  
+    How to set props:
+    1. provide 'props' information in a parent component Ex. <CommentDetail author="Sam" /> You can name the property(attribute) as you want
+    2. Consume the information in a child component by passing it as a function argument in the child component. Ex. const CommentDetail = props => { } The prop is going to show up inside of an object that is provided as the first argument to this function Ex. {author: Alex}      
